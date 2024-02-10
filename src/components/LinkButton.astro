@@ -1,0 +1,36 @@
+---
+const { href, text } = Astro.props;
+---
+
+<div class=" ">
+  <a
+    class="flex items-center rounded-lg border-2 box-content justify-center gap-2 text-center text-base px-5 py-3 text-white font-extrabold transition hover:shadow-md active:scale-95 active:translate-y-0 select-none"
+    href={href}
+  >
+    <div class="flex items-center gap-2 hover:drop-shadow-lg">
+      <slot />{text}
+    </div>
+  </a>
+</div>
+<style>
+  a {
+    background-color: var(--section);
+    border-color: var(--text);
+  }
+  a :is(*, [data-icon]) {
+    padding: auto;
+    /* text-shadow: 2px 2px 0px black; */
+    /* filter: drop-shadow(3px 3px 0px rgb(0, 0, 0)); */
+    filter: drop-shadow(0px 1px 0px rgb(0, 0, 0)) drop-shadow(0px -1px 0px rgb(0, 0, 0)) drop-shadow(1px 0px 0px rgb(0, 0, 0)) drop-shadow(-1px 0px 0px rgb(0, 0, 0));
+
+  }
+
+  a:hover {
+    background-color: var(--main);
+    box-shadow:
+      1px 1px 0 black,
+      2px 2px 0 black,
+      3px 3px 0 black,
+      4px 4px 0 black;
+  }
+</style>

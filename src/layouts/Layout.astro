@@ -1,0 +1,59 @@
+---
+import '@fontsource-variable/rubik';
+import Logo from '../components/Logo.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="font-sans">
+		<div class="fixed top-4 left-6 size-12 z-50">
+			<Logo/>
+		</div>
+		<!-- <div class="noise absolute w-full h-full top-0 left-0"></div> -->
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--main: #b12020;
+		--mainAccent: #cb1b1b;
+		--text: rgb(10, 10, 10, 1);
+		--section: rgb(20, 20, 20, 0.9);
+		--background: white;
+	}
+	
+	::selection {
+		background-color: var(--main);
+		color: var(--background);
+		/* border-radius: 2px; */
+		/* text-shadow: 2px 0px 1px deeppink; */
+	}
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		min-height: 100vh;
+	}
+	html {
+		color-scheme: dark light;
+		scroll-behavior: smooth;
+	}
+</style>

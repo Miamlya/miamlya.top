@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LinkButton from "../components/LinkButton.astro";
+---
+
+<Layout title="404">
+    <div class="flex h-dvh">
+        <div class="m-auto">
+            <h1
+                class="text-center text-8xl font-extrabold bg-clip-text hover:text-transparent bg-gradient-to-r from-red-500 to-red-700 transition"
+            >
+                404
+            </h1>
+            <h1
+                class="text-center pt-2 text-2xl font-extrabold"
+            >
+                ЭТУ СТРАНИЦУ УБИЛ МЯМЛЯ 🔪
+            </h1>
+
+            <div class="flex justify-center pt-6 gap-2">
+                <LinkButton href="javascript:history.back()" text="НАЗАД" />
+            </div>
+        </div>
+    </div>
+</Layout>

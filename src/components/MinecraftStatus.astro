@@ -1,0 +1,40 @@
+---
+import Tag from "./Tag.astro";
+---
+
+<Tag>
+  <div
+    id="status-circle"
+    class="h-3 w-3 bg-green-500 animate-pulse rounded-full my-auto "
+  >
+  </div>
+  <div id="server-ip">ОНЛАЙН</div>
+</Tag>
+
+<script>
+  async function initServerData(serverIp: string) {
+    fetch("https://mcapi.us/server/status?ip=" + serverIp)
+      .then((response) => response.json())
+      .then((data) => console.log(handleServerStatus(data)));
+
+    function handleServerStatus(data: any) {
+      if (data.status !== "error") {
+        console.log(data.error);
+        return false;
+      }
+      const motd = document.getElementById("status-circle");
+
+      if (motd !== null) {
+        motd.classList.remove("bg-green-500");
+        motd.classList.add("bg-orange-600");
+      }
+
+      const serverIpElement = document.getElementById("server-ip");
+      if (serverIpElement !== null) serverIpElement.innerHTML = "ОФЛАЙН";
+      const playerCounter = document.getElementById("player-count");
+      if (playerCounter !== null) playerCounter.innerHTML = data.players.now;
+    }
+  }
+
+  setTimeout(() => initServerData("ip.miamlya.top"), 500);
+</script>
