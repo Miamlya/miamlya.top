@@ -29,11 +29,11 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--main: #b12020;
-		--mainAccent: #cb1b1b;
+		--main: #931717;
+		--mainAccent: #be0f0f;
 		--text: rgb(10, 10, 10, 1);
-		--section: rgb(20, 20, 20, 0.9);
-		--background: white;
+		--section: rgb(20, 20, 20, 1);
+		--background: rgba(250, 250, 250, 0.95);
 	}
 	
 	::selection {
@@ -51,6 +51,7 @@ const { title } = Astro.props;
 	}
 	body {
 		min-height: 100vh;
+		background-color: var(--text)
 	}
 	html {
 		color-scheme: dark light;

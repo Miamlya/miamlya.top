@@ -1,15 +1,21 @@
 ---
-
+import { Image } from 'astro:assets';
+import imgBack from './Parallax/back.png';
 ---
 
 <!-- TODO implement parallax https://www.youtube.com/watch?v=Qj0Qx8HpNUo -->
-<img
-  src="/miamlya.webp"
-  alt="dance miamlya dance"
-  class="size-80 transition-all "
-/>
+<div class="parallax">
+  <img
+    src="/miamlya.webp"
+    alt="dance miamlya dance"
+    class="size-80 transition-all bg-miamlya"
+  />
 
-<img src="back.webp" alt="background" class="bg-1" />
+
+  <!-- <Image src={imgBack} alt="background" class="bg-1" /> -->
+  <img src='/loop.webp' alt="background" class="bg-1" />
+</div>
+
 <style>
   img:is(.bg-1) {
     position: absolute;

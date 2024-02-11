@@ -5,6 +5,9 @@ import Tag from "../components/Tag.astro";
 import LinkButton from "../components/LinkButton.astro";
 import { Icon } from "astro-icon/components";
 import Parallax from "../components/Parallax.astro";
+import { Image } from "astro:assets";
+import imgClasses from "./index/img1_classes.jpg";
+import Scroller from "../components/Scroller.astro";
 ---
 
 <Layout title="Пора убивать">
@@ -13,42 +16,98 @@ import Parallax from "../components/Parallax.astro";
     <div
       class="relative flex flex-col min-h-screen justify-center items-center"
     >
-    <!--  -->
-      <div class="flex justify-end items-center h-20 w-full mb-auto p-4 bg-black gap-2">
-        <LinkButton href="https://discord.gg/z8ynbBmCvF" class="">
-          <Icon name="ri:discord-fill" class="size-6" />ДИСКОРД
-        </LinkButton>
-        <LinkButton href="https://donatepay.eu/don/miamlya">
-          <Icon name="ri:hand-coin-fill" class="size-6" />ПОЖЕРТВОВАНИЯ
-        </LinkButton>
-        <LinkButton href="https://donatepay.eu/don/miamlya">
-          <Icon name="ri:gamepad-fill" class="size-6" />НАЧАТЬ
-        </LinkButton>
-      </div>
-      <Parallax />
+      <!--  -->
       <div
-        class="flex flex-row gap-2 align-middle justify-right items-center text-center pt-8 text-2xl font-bold text-white"
+        class="relative flex justify-end items-center h-20 w-full mb-auto p-4 bg-black gap-2"
       >
-        МЯМЛЯКРАФТ ™
-      </div>
-      <div class="italic text-center text-6xl font-black text-white">
-        ОЧЕНЬ ЖЕСТКОЕ EDITION
-      </div>
-      <div class="flex gap-2 justify-center pt-2 flex-wrap">
-        <MinecraftStatus />
-        <Tag text="ПРОХОДИТ АЛЬФА ТЕСТ" />
-        <Tag text="v0.3a" />
-      </div>
+        <div
+          class="h-full w-full bg-black text-red-700 absolute top-0 left-0 flex justify-center items-center ubivat italic z-50 transition-all text-lg pointer-events-none"
+        >
+          <Scroller>
+            <span>УБИВАТЬ</span>
+            <span>KILL</span>
+            <span>殺す</span>
+            <span>УБИВАТЬ</span>
+            <span>УБИВАТЬ</span>
+            <span>УБИВАТЬ</span>
+            <span>УБИВАТЬ</span>
+            <span>УБИВАТЬ</span>
+          </Scroller>
+        </div>
+        <LinkButton href="https://donatepay.eu/don/miamlya" isRound="true">
+          <Icon name="ri:money-dollar-circle-fill" class="size-6" />
+        </LinkButton>
+        <LinkButton href="https://discord.gg/z8ynbBmCvF" isRound="true">
+          <Icon name="ri:discord-fill" class="size-6" />
+        </LinkButton>
 
-      <div class="flex justify-center items-center h-20 w-full mt-auto bg-black">
-        <div class="flex gap-2 justify-center flex-wrap">
-
+        <LinkButton href="" color="var(--main)">
+          <Icon name="ri:gamepad-fill" class="size-6" />ПОПОЗЖЕ
+        </LinkButton>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center h-full w-full py-20"
+      >
+        <Parallax />
+        <div
+          class="flex flex-row gap-2 align-middle justify-right items-center text-center pt-8 text-2xl font-bold text-white"
+        >
+          МЯМЛЯКРАФТ ™
+        </div>
+        <div class="italic text-center text-6xl font-black text-white">
+          ОЧЕНЬ ЖЕСТКОЕ EDITION
+        </div>
+        <div class="flex gap-1 justify-center pt-2 flex-wrap">
+          <MinecraftStatus />
+          <Tag text="ПРОХОДИТ АЛЬФА ТЕСТ" />
+          <Tag text="v0.3a" />
         </div>
       </div>
+
+      <div
+        class="relative flex justify-center items-center h-20 w-full mt-auto bg-black"
+      >
+        <div
+          class="h-full w-full bg-black text-red-700 absolute top-0 left-0 flex justify-center items-center ubivat italic z-50 transition-all text-lg pointer-events-none"
+        >
+          <Scroller>
+            <span>УБИВАТЬ</span>
+            <span>KILL</span>
+            <span>殺す</span>
+            <span>УБИВАТЬ</span>
+            <span>УБИВАТЬ</span>
+            <span>УБИВАТЬ</span>
+            <span>УБИВАТЬ</span>
+            <span>УБИВАТЬ</span>
+          </Scroller>
+        </div>
+        <div class="flex gap-2 justify-center flex-wrap"></div>
+      </div>
     </div>
-    <div>
-      123
-      <img src="/miamlya.webp" alt="" />
-    </div>
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- <div class="flex flex-col justify-center items-center py-16">
+      <div class="  px-24">
+        <b>МямляCRAFT SMP</b> - станет великим попозже
+        <Image
+          src={imgClasses}
+          alt="Image of classes"
+          class="w-full md:w-1/2"
+        />
+      </div> -->
   </main>
 </Layout>
+
+<style>
+  .ubivat {
+    opacity: 0;
+    transition: all 500ms;
+  }
+  main:has(.bg-miamlya:hover) .ubivat {
+    opacity: 1;
+    transition: all 500ms;
+
+    display: flex;
+  }
+</style>

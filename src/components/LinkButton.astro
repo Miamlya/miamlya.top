@@ -1,36 +1,41 @@
 ---
-const { href, text } = Astro.props;
+const { href, text, isRound = false, color = "var(--section)" } = Astro.props;
+const btnClasses =
+  "flex items-center justify-center  box-content gap-2 text-center text-sm font-bold transition hover:shadow-md active:scale-95 active:translate-y-0 select-none" +
+  (isRound ? " rounded-full size-12" : " rounded-full px-6 py-3");
+const btnStyle = "background-color: " + color + ";";
 ---
 
-<div class=" ">
-  <a
-    class="flex items-center rounded-lg border-2 box-content justify-center gap-2 text-center text-base px-5 py-3 text-white font-extrabold transition hover:shadow-md active:scale-95 active:translate-y-0 select-none"
-    href={href}
-  >
-    <div class="flex items-center gap-2 hover:drop-shadow-lg">
+<div>
+  <a class={btnClasses} style={btnStyle} href={href}>
+    <div class="flex items-center justify-center gap-2">
       <slot />{text}
     </div>
   </a>
 </div>
 <style>
   a {
-    background-color: var(--section);
-    border-color: var(--text);
+    border: 1px solid black;
+
+    /* border-color: var(--text); */
   }
   a :is(*, [data-icon]) {
     padding: auto;
     /* text-shadow: 2px 2px 0px black; */
     /* filter: drop-shadow(3px 3px 0px rgb(0, 0, 0)); */
-    filter: drop-shadow(0px 1px 0px rgb(0, 0, 0)) drop-shadow(0px -1px 0px rgb(0, 0, 0)) drop-shadow(1px 0px 0px rgb(0, 0, 0)) drop-shadow(-1px 0px 0px rgb(0, 0, 0));
-
+    /* filter: drop-shadow(2px 2px 0px rgb(0, 0, 0)); */
   }
 
   a:hover {
-    background-color: var(--main);
+    border: 1px solid white;
+    /* background-color: var(--main); */
     box-shadow:
       1px 1px 0 black,
       2px 2px 0 black,
       3px 3px 0 black,
       4px 4px 0 black;
+  }
+  a:active {
+    background-color: var(--main);
   }
 </style>
