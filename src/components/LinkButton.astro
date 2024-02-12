@@ -10,7 +10,7 @@ const {
 } = Astro.props;
 
 const btnClasses =
-  "flex items-center justify-center h-12 box-content gap-2 text-center text-base font-extrabold transition hover:shadow-md active:scale-95 active:translate-y-0 select-none " +
+  "flex items-center justify-center h-12 box-content gap-2 text-center text-sm font-bold transition hover:shadow-md active:scale-95 active:translate-y-0 select-none " +
   (isRound ? "rounded-full w-12" : "rounded-full px-6");
 
 const btnStyle = `background-color: ${bgColor}; color: ${color} `;
@@ -33,7 +33,7 @@ const btnStyle = `background-color: ${bgColor}; color: ${color} `;
   }
 
   a:hover {
-    background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+    background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
     border: 1px solid var(--text);
     color: var(--text) !important;
     
