@@ -1,5 +1,5 @@
 ---
-const { href, text, isRound = false, color = "var(--section)" } = Astro.props;
+const { href, text, isRound = false, bgColor = "var(--section)", color = "var(--section)", hoverBgColor, hoverColor } = Astro.props;
 const btnClasses =
   "flex items-center justify-center  box-content gap-2 text-center text-sm font-bold transition hover:shadow-md active:scale-95 active:translate-y-0 select-none" +
   (isRound ? " rounded-full size-12" : " rounded-full px-6 py-3");
