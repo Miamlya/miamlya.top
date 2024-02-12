@@ -3,13 +3,13 @@ const { text } = Astro.props;
 ---
 
 <div
-  class="flex gap-2 justify-center text-center py-2 px-3 text-white rounded-full text-xs font-regular select-none"
+  class="flex gap-2 justify-center text-center py-2 px-3 text-white rounded-full text-xs font-light select-none"
 >
   {text}<slot />
 </div>
 <style>
   div {
-    background-color: var(--text);
+    background-color: var(--background);
     border-color: var(--text);
   }
 

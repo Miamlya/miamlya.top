@@ -1,34 +1,43 @@
 ---
-const { href, text, isRound = false, bgColor = "var(--section)", color = "var(--section)", hoverBgColor, hoverColor } = Astro.props;
+const {
+  href,
+  text,
+  isRound = false,
+  bgColor = "var(--section)",
+  color = "var(--text)",
+  hoverBgColor,
+  hoverColor,
+} = Astro.props;
+
 const btnClasses =
-  "flex items-center justify-center  box-content gap-2 text-center text-sm font-bold transition hover:shadow-md active:scale-95 active:translate-y-0 select-none" +
-  (isRound ? " rounded-full size-12" : " rounded-full px-6 py-3");
-const btnStyle = "background-color: " + color + ";";
+  "flex items-center justify-center h-12 box-content gap-2 text-center text-base font-extrabold transition hover:shadow-md active:scale-95 active:translate-y-0 select-none " +
+  (isRound ? "rounded-full w-12" : "rounded-full px-6");
+
+const btnStyle = `background-color: ${bgColor}; color: ${color} `;
 ---
 
-<div>
-  <a class={btnClasses} style={btnStyle} href={href}>
-    <div class="flex items-center justify-center gap-2">
-      <slot />{text}
-    </div>
-  </a>
-</div>
+<a class={btnClasses} style={btnStyle} href={href}>
+  <div class="flex items-center justify-center gap-2">
+    <slot />{text}
+  </div>
+</a>
 <style>
   a {
-    border: 1px solid black;
-
-    /* border-color: var(--text); */
+    border: 1px solid var(--background);
   }
-  a :is(*, [data-icon]) {
-    padding: auto;
+  a {
+    /* padding: auto; */
     /* text-shadow: 2px 2px 0px black; */
     /* filter: drop-shadow(3px 3px 0px rgb(0, 0, 0)); */
     /* filter: drop-shadow(2px 2px 0px rgb(0, 0, 0)); */
   }
 
   a:hover {
-    border: 1px solid white;
-    /* background-color: var(--main); */
+    background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+    border: 1px solid var(--text);
+    color: var(--text) !important;
+    
+    background-color: var(--mainAccent);
     box-shadow:
       1px 1px 0 black,
       2px 2px 0 black,

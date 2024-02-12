@@ -1,19 +1,24 @@
 ---
-import { Image } from 'astro:assets';
-import imgBack from './Parallax/back.png';
+import { Image } from "astro:assets";
+import imgBack from "./Parallax/back.png";
+import Fog from "../components/Fog.astro";
 ---
 
 <!-- TODO implement parallax https://www.youtube.com/watch?v=Qj0Qx8HpNUo -->
-<div class="parallax">
+<div class="parallax select-none">
   <img
     src="/miamlya.webp"
     alt="dance miamlya dance"
-    class="size-80 transition-all bg-miamlya"
+    class="size-80 transition-all bg-miamlya -z-20"
   />
 
-
   <!-- <Image src={imgBack} alt="background" class="bg-1" /> -->
-  <img src='/loop.webp' alt="background" class="bg-1" />
+  <img src="/loop.webp" alt="background" class="bg-1" />
+  <div
+    class="w-full h-full absolute left-0 top-0 -z-10 overflow-hidden mix-blend-screen opacity-10 pointer-events-none"
+  >
+    <Fog class="pointer-events-none" />
+  </div>
 </div>
 
 <style>
