@@ -8,6 +8,10 @@
 		}
 	],
 	"settings": {
-		"vs-browser.url": "http://localhost:4321/"
+		"vs-browser.url": "http://localhost:4321/",
+		"cSpell.words": [
+			"miamlya",
+			"MIAMLYACRAFT"
+		]
 	}
 }
