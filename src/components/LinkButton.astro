@@ -24,19 +24,20 @@ const btnStyle = `background-color: ${bgColor}; color: ${color} `;
 <style>
   a {
     border: 1px solid var(--background);
-  }
-  a {
-    /* padding: auto; */
-    /* text-shadow: 2px 2px 0px black; */
+    transition: 0.2s ease-out;
     /* filter: drop-shadow(3px 3px 0px rgb(0, 0, 0)); */
     /* filter: drop-shadow(2px 2px 0px rgb(0, 0, 0)); */
   }
 
+
   a:hover {
-    background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
-    border: 1px solid var(--text);
+    background-color: var(--sectionHover) !important;
+    /* background-image: linear-gradient(rgb(0 0 0/20%) 0 0); */
+    /* border: 1px solid var(--text); */
+    /* text-shadow: 2px 2px 0px rgb(244 244 244 /0.5px); */
+
     color: var(--text) !important;
-    
+
     background-color: var(--mainAccent);
     box-shadow:
       1px 1px 0 black,
