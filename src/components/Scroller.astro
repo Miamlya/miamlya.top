@@ -2,14 +2,24 @@
 
 ---
 
-<div class="scroller flex items-center justify-center truncate ">
+<div class="scroller flex items-center justify-center truncate">
   <div class="scroller__inner gap-6">
     <slot />
   </div>
 </div>
 <style>
   .scroller {
-    
+    filter: drop-shadow(10px 0px 20px red);
+    animation: 4s infinite alternate shadow;
+  }
+  @keyframes shadow {
+    0%,
+    100% {
+      filter: drop-shadow(10px -2px 12px hsla(0, 100%, 50%, 0.9));
+    }
+    50% {
+      filter: drop-shadow(-10px 2px 12px hsla(0, 100%, 50%, 0.9));
+    }
   }
   .scroller__inner {
     display: flex;
