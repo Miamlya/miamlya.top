@@ -1,9 +1,9 @@
 ---
-import '@fontsource-variable/rubik';
-import Logo from '../components/Logo.astro';
+import "@fontsource-variable/rubik";
+import Logo from "../components/Logo.astro";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -11,51 +11,58 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="font-sans">
-		<div class="fixed top-4 left-6 sm:left-12 lg:left-16 size-12 z-50">
-			<Logo/>
-		</div>
-		<!-- <div class="noise absolute w-full h-full top-0 left-0"></div> -->
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="font-sans">
+    <div class="fixed top-4 left-6 sm:left-12 lg:left-16 size-12 z-50">
+      <Logo />
+    </div>
+    <!-- <div class="noise absolute w-full h-full top-0 left-0"></div> -->
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--main: #bb1b1b;
-		--mainAccent: #be0f0f;
-		--text: rgb(240, 240, 240);
-		--section: rgb(20, 20, 20, 1);
-		--sectionHover: #27272a;
-		--background: rgb(10, 10, 10, 1);
-	}
-	
-	::selection {
-		background-color: var(--main);
-		color: var(--background);
-		/* border-radius: 2px; */
-		/* text-shadow: 2px 0px 1px deeppink; */
-	}
-	*, *::before, *::after {
-		box-sizing: border-box;
-	}
-	* {
-		margin: 0;
-		padding: 0;
-	}
-	body {
-		min-height: 100vh;
-		background-color: var(--background)
-	}
-	html {
-		color-scheme: dark light;
-		scroll-behavior: smooth;
-	}
+  :root {
+    --main: #bb1b1b;
+    --mainAccent: #be0f0f;
+    --text: rgb(240, 240, 240);
+    --section: rgb(20, 20, 20, 1);
+    --sectionHover: #27272a;
+    --background: rgb(10, 10, 10, 1);
+  }
+
+  ::selection {
+    background-color: var(--main);
+    color: var(--background);
+    /* border-radius: 2px; */
+    /* text-shadow: 2px 0px 1px deeppink; */
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    color-scheme: dark light;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+	scrollbar-color: var(--main) var(--background);
+	/* scrollbar-gutter: stable; */
+	/* overflow: hidden; */
+  }
+  body {
+    min-height: 100vh;
+    background-color: var(--background);
+  }
 </style>
